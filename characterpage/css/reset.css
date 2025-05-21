@@ -1,0 +1,19 @@
+/*기본 리셋 파일, 업데이트 예정*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  /*li 태그 등의 스타일을 전부 초기화시킴*/
+}
+
+img {
+  display: block;
+  /*div 안에서 이미지 크기가 작아 생기는 공란을 방지*/
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,268 @@
+body {
+  background-color: #60a241;
+  background-image: radial-gradient(#98bf85 1px, transparent 1px);
+  background-size: 20px 20px;
+  margin: 0; /* 스크롤 여백 방지 */
+  overflow-x: hidden; /* 좌우 스크롤 막기 */
+  background-color: #60a241;
+}
+
+/* 메뉴 */
+.menu {
+  background-color: #000;
+  width: 100vw;
+  padding: 10px 30px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_img img {
+  height: 65px;
+  width: 65px;
+}
+
+.menu button {
+  color: #fff;
+  border: none;
+  background-color: #444878;
+  font-size: 20px;
+  width: 350px;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.menu button:hover {
+  font-weight: bold;
+}
+
+.menu_edward button:hover {
+  color: #000;
+  background-color: #ff0101;
+}
+
+.menu_rocklee button:hover {
+  color: #000;
+  background-color: #5af711;
+}
+
+.menu_taeseop button:hover {
+  color: #fff;
+  background-color: #d30606;
+}
+
+.menu_taeyoung button:hover {
+  color: #000;
+  background-color: #ffc22f;
+}
+
+/* 1페이지 */
+.page1 {
+  display: flex;
+  position: relative;
+  width: auto;
+  height: 100vh;
+}
+
+.rocklee1 {
+  z-index: 5;
+  padding: 70px;
+  position: absolute;
+}
+
+.rocklee1 img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.rocklee1 img:hover {
+  filter: drop-shadow(-50px -10px 5px rgba(0, 0, 0, 0.25));
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+}
+
+.star1 img {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 500px;
+
+  animation: twinkle 1s linear infinite;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(2);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.star2 {
+  position: absolute;
+  z-index: 2;
+  top: 300px;
+  left: 850px;
+  animation: rotate2 5s linear infinite;
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* 생각 */
+.speechbubble {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 50px;
+  right: 15%;
+  z-index: 1;
+}
+
+.speechbubble .text3 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 40%;
+  font-size: 30px;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.speechbubble .text4 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 60%;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.sandbag img {
+  position: absolute;
+  bottom: 200px;
+  right: 100px;
+  width: 15%;
+}
+
+/* 외침 */
+
+.mama {
+  position: absolute;
+  bottom: 250px;
+  right: 20%;
+  z-index: 1;
+}
+
+.mama img {
+  position: relative;
+  display: block;
+}
+
+.mama p {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-size: 30px;
+  z-index: 10;
+  text-align: center;
+}
+
+.mama .bold {
+  font-weight: bold;
+  color: red;
+}
+
+@keyframes /* 캐릭터 한마디 */
+.description {
+  position: relative;
+  top: 550px;
+  left: 500px;
+}
+
+.description .text1 {
+  font-size: 24px;
+  color: #fff;
+}
+
+.description .text2 {
+  position: absolute;
+  top: 50px;
+}
+
+/* 트랙 */
+.track {
+  overflow: hidden;
+  width: 200vw;
+  left: -50vw;
+  height: 280px;
+  position: relative;
+  background-color: #1120f7;
+  color: #5af711;
+  font-weight: bold;
+  font-size: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotate(-10deg);
+  box-sizing: border-box;
+  z-index: 10;
+  top: -180px;
+}
+
+.track .track1 {
+  white-space: nowrap;
+  font-weight: bold;
+  color: #5af711;
+  animation-timing-function: linear;
+  animation: moveRight 15s linear infinite;
+  display: inline-block;
+}
+
+.track .track2 {
+  white-space: nowrap;
+  font-weight: bold;
+  color: #5af711;
+  animation-timing-function: linear;
+  animation: moveLeft 15s linear infinite;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
 .menu_img img {
@@ -118,6 +119,46 @@ body {
   }
   100% {
     transform: rotate(-360deg);
+  }
+}
+
+/* 바람에 날리는 잎 */
+.leaf1 {
+  position: absolute;
+  z-index: 100;
+  top: 200px;
+  right: 0px;
+  animation: falling 3s linear infinite;
+  filter: blur(3px);
+  scale: 0.5;
+}
+
+.leaf2 {
+  position: absolute;
+  z-index: 100;
+  top: -550px;
+  right: 0px;
+  animation: falling 3s linear infinite;
+  filter: blur(5px);
+  scale: 1.2;
+}
+
+.leaf3 {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  animation: falling 2s linear infinite;
+  filter: blur(1px);
+  scale: 0.8;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateX(100px) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-2000%) translateY(1100%) rotate(360deg);
   }
 }
 
@@ -247,7 +288,7 @@ body {
   justify-content: center;
   transform: rotate(-10deg);
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1000;
   top: -180px;
 }
 
@@ -288,11 +329,11 @@ body {
 
 .orange {
   position: absolute;
-  width: 200vw;
-  height: 1000px;
+  width: 240vw;
+  height: 600px;
   background-color: #f75811;
   z-index: -1;
-  top: 100%;
+  top: 90%;
   transform: rotate(-10deg);
 }
 
@@ -301,7 +342,7 @@ body {
   position: relative;
   display: flex;
   width: auto;
-  height: 100vh;
+  height: 70vh;
   background-color: #f75811;
 }
 
@@ -310,7 +351,7 @@ body {
   position: absolute;
   left: 25%;
   transform: translateX(-50%);
-  font-size: 64px;
+  font-size: 55px;
   color: #fff;
   z-index: 10;
 }
@@ -319,20 +360,29 @@ body {
   position: absolute;
   left: 65%;
   transform: translateX(-50%);
-  font-size: 64px;
+  font-size: 55px;
   color: #fff;
   z-index: 10;
 }
 
+.text5 span,
+.text6 span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
 /* 클릭버튼 */
+/* 질문!!!! 페이지 2가 대각선모양인데 어카죠? 배경색은 야매로 하긴 했는데 클릭버튼이 안 올라가요 */
 .clickme {
   position: absolute;
   right: 10%;
-  top: -30%;
+  top: -40%;
 }
 
 .clickme img {
-  width: 2000px
+  width: 300px;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
@@ -341,14 +391,11 @@ body {
   transition: all 0.5s ease;
 }
 
-/* 질문!!!! 페이지 2가 대각선모양인데 어카죠? 배경색은 야매로 하긴 했는데 클릭버튼이 안 올라가요 */
-
 .clickthat {
   position: absolute;
   right: 3%;
   top: -20%;
 }
-
 
 .sparkle1 {
   position: absolute;
@@ -363,19 +410,22 @@ body {
   z-index: 1;
   scale: 0.2;
   right: -25%;
+  bottom: -50%;
 }
 
+/* 록리등장 */
 .cloud {
   position: absolute;
   z-index: 1;
-  top: 60%;
-  left: -10%;
+  top: 63%;
+  left: -12%;
   scale: 0.8;
 }
 
 .rocklee2 {
   position: absolute;
   z-index: 100;
+  top: -25%;
   right: 10%;
   scale: 1.2;
 }
@@ -383,6 +433,7 @@ body {
 .rocklee_shadow1 {
   position: absolute;
   z-index: 99;
+  top: -25%;
   right: 8%;
   scale: 1.2;
 }
@@ -390,8 +441,36 @@ body {
 .rocklee_shadow2 {
   position: absolute;
   z-index: 98;
+  top: -25%;
   right: 6%;
   scale: 1.2;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* 록리등장: 초기 위치 설정 */
+.rocklee2,
+.rocklee_shadow1,
+.rocklee_shadow2,
+.cloud {
+  transform: translateX(-300%);
+}
+
+.rocklee_text {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .jolryeol_leaf {
@@ -399,9 +478,10 @@ body {
   padding: 10px 20px;
   position: absolute;
   z-index: 50;
-   display: flex;
+  display: flex;
   gap: 80px;
   justify-content: center;
   align-items: center;
   width: 100vw;
+  bottom: -10%;
 }

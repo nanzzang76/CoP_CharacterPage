@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "YOnepickTTF-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/YOnepickTTF-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   background-color: #60a241;
   background-image: radial-gradient(#98bf85 1px, transparent 1px);
@@ -21,6 +29,12 @@ body {
 .menu_img img {
   height: 65px;
   width: 65px;
+}
+
+.menu_img img:hover {
+  transition: all 0.3s ease;
+  border: #5af711 5px solid;
+  border-radius: 50%;
 }
 
 .menu button {
@@ -66,6 +80,14 @@ body {
   height: 100vh;
 }
 
+.answer {
+  font: normal 700 30px/1.5 "YOnepickTTF-Bold", sans-serif;
+  color: #000;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
 .rocklee1 {
   z-index: 5;
   position: absolute;
@@ -98,7 +120,7 @@ body {
     filter: brightness(1.2);
   }
   50% {
-    filter: brightness(2);
+    filter: brightness(3);
   }
   100% {
     filter: brightness(1.2);
@@ -153,6 +175,16 @@ body {
   scale: 0.8;
 }
 
+.leaf4 {
+  position: absolute;
+  z-index: 100;
+  top: 100px;
+  right: 0px;
+  animation: falling 5s linear infinite;
+  filter: blur(8px);
+  scale: 0.3;
+}
+
 @keyframes falling {
   0% {
     transform: translateX(100px) translateY(0) rotate(0deg);
@@ -169,7 +201,31 @@ body {
   justify-content: center;
   top: 50px;
   right: 15%;
-  z-index: 1;
+}
+
+.speechbubble img:hover {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .speechbubble .text3 {
@@ -197,6 +253,7 @@ body {
   right: 100px;
   width: 15%;
   animation: sizechange 2s linear infinite;
+  z-index: -2;
 }
 
 @keyframes sizechange {
@@ -217,7 +274,6 @@ body {
   position: absolute;
   bottom: 250px;
   right: 20%;
-  z-index: 2;
   transition: all 1s ease;
   cursor: pointer;
 }
@@ -237,7 +293,6 @@ body {
   left: 50%;
   top: 50%;
   font-size: 30px;
-  z-index: 2;
   text-align: center;
 }
 
@@ -251,7 +306,7 @@ body {
   top: 50%;
   right: 35%;
   width: 100%;
-  z-index: 100;
+  z-index: 1001;
   display: none;
 }
 
@@ -273,6 +328,7 @@ body {
 }
 
 /* 트랙 */
+/* 트랙은 왜 끊길까요??? 전 잘 모르겠습니다 */
 .track {
   overflow: hidden;
   width: 200%;
@@ -384,6 +440,7 @@ body {
 .clickme img {
   width: 300px;
   transition: transform 0.5s ease, filter 0.5s ease;
+  animation: twinkle 1s linear infinite;
 }
 
 .clickme :hover {
@@ -393,8 +450,9 @@ body {
 
 .clickthat {
   position: absolute;
-  right: 3%;
-  top: -20%;
+  right: 28%;
+  top: -30%;
+  font-size: 24px;
 }
 
 .sparkle1 {
@@ -402,7 +460,7 @@ body {
   left: 7%;
   z-index: 1;
   scale: 0.2;
-  top: -70%;
+  top: -90%;
 }
 
 .sparkle2 {
@@ -411,6 +469,7 @@ body {
   scale: 0.2;
   right: -25%;
   bottom: -50%;
+  rotate: 90deg;
 }
 
 /* 록리등장 */
@@ -470,7 +529,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 90;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.7s ease;
 }
 
 .jolryeol_leaf {
@@ -484,4 +543,73 @@ body {
   align-items: center;
   width: 100vw;
   bottom: -10%;
+}
+
+.jolryeol_leaf img {
+  transition: all 0.5s ease;
+  animation: blink 1s linear infinite;
+}
+
+.jolryeol_leaf img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.jolryeol_leaf img:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.jolryeol_leaf img:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.jolryeol_leaf img:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.jolryeol_leaf img:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.jolryeol_leaf img:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.jolryeol_leaf img:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.jolryeol_leaf img:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.jolryeol_leaf img:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+.jolryeol_leaf img:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+.jolryeol_leaf img:nth-child(11) {
+  animation-delay: 2s;
+}
+
+.jolryeol_leaf img:nth-child(12) {
+  animation-delay: 2.2s;
+}
+
+.jolryeol_leaf img:nth-child(13) {
+  animation-delay: 2.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }

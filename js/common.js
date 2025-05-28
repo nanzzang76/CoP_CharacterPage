@@ -4,16 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const approvedImg = document.querySelector(".approved img");
 
   mamaStar3.addEventListener("click", function () {
-    // 먼저 display를 block으로 바꿔서 나타나게 함
+    // display: block으로 보이게
     approvedImg.style.display = "block";
 
-    // transition을 위해 처음에 width를 100%로 설정
+    // transition 제거 → 즉시 width 100%로 초기화
+    approvedImg.style.transition = "none";
     approvedImg.style.width = "100%";
 
-    // 강제로 reflow 발생시켜 트랜지션 발동
+    // 강제로 reflow 발생시켜서 초기화가 반영되도록
     void approvedImg.offsetWidth;
 
-    // width를 15%로 줄이는 애니메이션 실행
+    // transition 추가 → width 15%로 줄이기 (애니메이션 발동)
     approvedImg.style.transition = "width 0.3s ease";
     approvedImg.style.width = "15%";
   });
@@ -32,11 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("clicked!"); // 실행 확인용
 
     [rocklee2, cloud].forEach((el) => {
-      el.style.animation = "shoot 0.3s forwards";
+      el.style.animation = "shoot 0.5s forwards";
     });
 
-    rockleeShadow1.style.animation = "shoot 0.3s 0.2s forwards";
-    rockleeShadow2.style.animation = "shoot 0.3s 0.4s forwards";
+    rockleeShadow1.style.animation = "shoot 0.5s 0.2s forwards";
+    rockleeShadow2.style.animation = "shoot 0.5s 0.4s forwards";
 
     // rocklee_text
     if (rockleeText) {

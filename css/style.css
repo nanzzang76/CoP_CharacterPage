@@ -213,6 +213,7 @@ body {
   justify-content: center;
   top: 50px;
   right: 15%;
+  z-index: 2;
 }
 
 .speechbubble img:hover {
@@ -265,7 +266,7 @@ body {
   right: 100px;
   width: 15%;
   animation: sizechange 2s linear infinite;
-  z-index: -2;
+  z-index: 1;
 }
 
 @keyframes sizechange {
@@ -288,6 +289,7 @@ body {
   right: 20%;
   transition: all 1s ease;
   cursor: pointer;
+  z-index: 3;
 }
 
 .mama img {
@@ -639,6 +641,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .curtain img {
@@ -676,4 +679,80 @@ body {
   width: 500px;
   height: 300px;
   background: #fff;
+}
+
+.ribbon img {
+  position: absolute;
+  width: 50%;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.randomImage {
+  width: 575px;
+  aspect-ratio: 16/10;
+  border: 1px solid blue;
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+}
+
+.randomImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tada {
+  position: absolute;
+  font-size: 50px;
+  font-weight: bold;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+.tada_btn button {
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1120f7;
+  font-size: large;
+  font-weight: bold;
+  width: 200px;
+  height: 80px;
+  z-index: 12;
+}
+
+.fighting {
+  position: absolute;
+  width: 20%;
+  bottom: 15%;
+  right: 25%;
+  z-index: 11;
+}
+.fighting-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.fighting img {
+  width: 100%;
+}
+
+.fighting p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 12;
+  text-shadow: 1px 1px 3px #000;
 }

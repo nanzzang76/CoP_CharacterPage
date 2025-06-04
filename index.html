@@ -217,9 +217,32 @@
           <img src="./img/all/theater.jpg" alt="" />
         </div>
 
+        <div class="tada">
+          <p>오늘의 명장면</p>
+        </div>
+
+        <figure class="ribbon">
+          <img src="./img/all/ribbon.png" alt="" />
+        </figure>
+
         <figure class="frame1">
           <img src="./img/all/frame.png" alt="" />
         </figure>
+
+        <figure class="randomImage"></figure>
+
+        <div class="tada_btn">
+          <button class="show-image">나와라 뚝딱</button>
+        </div>
+
+        <div class="fighting">
+          <div class="fighting-wrap">
+            <p></p>
+            <figure>
+              <img src="./img/all/Star1.png" alt="" />
+            </figure>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -227,5 +250,67 @@
       <div class="layer-popup-wrap">text</div>
     </div>
     <script src="./js/common.js"></script>
+
+    <script>
+      const imageData = [
+        {
+          path: "./img/rocklee/random/img1.png",
+          text: "재능이 없더라도<br>훌륭한 닌자가 될 수 있어!",
+        },
+        {
+          path: "./img/rocklee/random/img2.png",
+          text: "어이어이 록리! <br>제5문까지 열어버린 거냐구-!",
+        },
+        {
+          path: "./img/rocklee/random/img3.png",
+          text: "닌자의 길이란<br>정말 멋진 거구나...!",
+        },
+        {
+          path: "./img/rocklee/random/img4.png",
+          text: "쓰레기!쓰레기!",
+        },
+        {
+          path: "./img/rocklee/random/img5.png",
+          text: "노력으로<br>이겨내자!!",
+        },
+        {
+          path: "./img/rocklee/random/img6.png",
+          text: "건치미소 멋지다!",
+        },
+        {
+          path: "./img/rocklee/random/img7.png",
+          text: "나도 기쁘구나!",
+        },
+      ];
+
+      let lastIndex = -1;
+
+      document
+        .querySelector(".show-image")
+        .addEventListener("click", function () {
+          let randomIndex;
+
+          do {
+            randomIndex = Math.floor(Math.random() * imageData.length);
+          } while (randomIndex === lastIndex); // 중복 방지
+
+          lastIndex = randomIndex;
+          const selected = imageData[randomIndex];
+
+          // 이미지 삽입
+          const imgElement = document.createElement("img");
+          imgElement.src = selected.path;
+          imgElement.alt = "랜덤 이미지";
+          imgElement.style.maxWidth = "100%";
+
+          const figure = document.querySelector(".randomImage");
+          figure.innerHTML = "";
+          figure.appendChild(imgElement);
+
+          // 텍스트 삽입
+          const textTarget = document.querySelector(".fighting p");
+          textTarget.innerHTML = selected.text;
+        });
+    </script>
   </body>
 </html>

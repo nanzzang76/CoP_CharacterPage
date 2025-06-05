@@ -321,6 +321,7 @@ body {
   right: 35%;
   width: 95%;
   display: none;
+  z-index: 100;
 }
 
 /* 캐릭터 한마디 */
@@ -657,6 +658,7 @@ body {
   z-index: 1; /* curtain 위로 */
 }
 
+/* 레이어팝업 기본틀 */
 .layer-popup {
   position: fixed;
   left: 0;
@@ -665,20 +667,102 @@ body {
   height: 100vh;
   background: #00000038;
   z-index: 99000;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
-  display: none;
+  display: none; /* ← ✅ 이것만 남기고 */
 }
 
 .layer-popup.show {
-  display: flex;
+  display: flex; /* ← ✅ .show 붙었을 때만 보이게 */
+}
+
+/* 레이어팝업 디자인 */
+.popup-title {
+  position: relative;
+}
+
+.popup-title img {
+  width: 90%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* 텍스트 뒤에만 있도록 -1 대신 0 사용 */
+}
+
+.popup-title p {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .layer-popup-wrap {
-  width: 500px;
-  height: 300px;
+  width: 950px;
+  height: 400px;
   background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup_byeol img {
+  width: 250px;
+}
+
+.blahblah {
+  display: flex;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+}
+
+.popup-content {
+  padding: 10px 20px;
+  width: 900px;
+}
+
+.info {
+  padding: 10px 0;
+}
+
+.info .small {
+  font-size: 14px;
+  color: #666;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.popup-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.frame-img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.poo-btn {
+  width: 67px;
+  height: 82px;
+}
+.poo-img {
+  width: 100px;
+}
+
+.answer {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .ribbon img {
@@ -727,6 +811,7 @@ body {
   width: 200px;
   height: 80px;
   z-index: 12;
+  color: #fff;
 }
 
 .fighting {
@@ -755,4 +840,39 @@ body {
   color: #fff;
   z-index: 12;
   text-shadow: 1px 1px 3px #000;
+}
+
+.footer {
+  background-color: #000;
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.footer_wrap p {
+  color: #fff;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.awesome {
+  position: absolute;
+  bottom: 40%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.masterpiece {
+  display: flex;
+}
+
+.masterpiece p {
+  padding: 0 20px 0 0;
+  color: yellow;
+  font-style: italic;
 }

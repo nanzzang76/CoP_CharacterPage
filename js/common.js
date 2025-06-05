@@ -20,35 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 록리등장
-document.addEventListener("DOMContentLoaded", function () {
-  const clickMeBtn = document.querySelector(".clickme");
-  const rocklee2 = document.querySelector(".rocklee2");
-  const rockleeShadow1 = document.querySelector(".rocklee_shadow1");
-  const rockleeShadow2 = document.querySelector(".rocklee_shadow2");
-  const cloud = document.querySelector(".cloud");
-  const rockleeText = document.querySelector(".rocklee_text");
-
-  clickMeBtn.addEventListener("click", function () {
-    console.log("clicked!"); // 실행 확인용
-
-    [rocklee2, cloud].forEach((el) => {
-      el.style.animation = "shoot 0.5s forwards";
-    });
-
-    rockleeShadow1.style.animation = "shoot 0.5s 0.2s forwards";
-    rockleeShadow2.style.animation = "shoot 0.5s 0.4s forwards";
-
-    // rocklee_text
-    if (rockleeText) {
-      console.log("rocklee_text found!");
-      rockleeText.style.opacity = "1";
-    } else {
-      console.log("rocklee_text NOT found!");
-    }
-  });
-});
-
 // 메가디스크립션
 document.addEventListener("DOMContentLoaded", function () {
   const text5Lines = document.querySelectorAll(".text5 span");
@@ -89,5 +60,43 @@ document.addEventListener("DOMContentLoaded", function () {
         line.style.opacity = 0.3;
       }
     });
+  });
+});
+
+// 답변
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.querySelector(".layer-popup");
+  const popupWrap = document.querySelector(".layer-popup-wrap");
+  const menuImg = document.querySelector(".menu_img img");
+  const helloBtn = document.querySelector(".hello-btn");
+  const pooBtn = document.querySelector(".poo-btn");
+  const answer = document.querySelector(".answer");
+
+  // 팝업 열기
+  menuImg.addEventListener("click", function (e) {
+    popup.classList.add("show");
+  });
+
+  // 팝업 안쪽 클릭 시 닫힘 방지
+  popupWrap.addEventListener("click", function (e) {
+    e.stopPropagation(); // ← 중요!
+  });
+
+  // 바깥 클릭 무시 (닫지 않음)
+  popup.addEventListener("click", function (e) {
+    // 아무것도 하지 않음
+  });
+
+  // 인사하기
+  helloBtn.addEventListener("click", function () {
+    popup.classList.remove("show");
+    answer.textContent =
+      "멋지고 아름답고 열정적이고 상냥하고 다정한 당신, 행복한 하루되세요♥";
+  });
+
+  // 무시하기
+  pooBtn.addEventListener("click", function () {
+    popup.classList.remove("show");
+    answer.textContent = "구린하루되세요";
   });
 });

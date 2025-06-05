@@ -425,45 +425,7 @@
 
 
 
-      // 팝업 기능
-       document.addEventListener("DOMContentLoaded", function () {
-    const popup = document.querySelector(".layer-popup");
-    const menuImg = document.querySelector(".menu_img img");
-    const helloBtn = document.querySelector(".hello-btn");
-    const pooBtn = document.querySelector(".poo-btn");
-    const answer = document.querySelector(".answer");
-
-    // 메뉴 이미지 클릭 시 팝업 보이기
-    if (menuImg && popup) {
-      menuImg.addEventListener("click", function () {
-        popup.classList.add("show");
-      });
-    }
-
-    // 인사하기 버튼 클릭 시
-    if (helloBtn && answer) {
-      helloBtn.addEventListener("click", function () {
-        popup.classList.remove("show");
-        answer.innerHTML =
-          "멋지고 아름답고 열정적이고 상냥하고 다정한 당신, 행복한 하루되세요♥";
-      });
-    }
-
-    // 무시하기 버튼 클릭 시
-    if (pooBtn && answer) {
-      pooBtn.addEventListener("click", function () {
-        popup.classList.remove("show");
-        answer.textContent = "구린하루되세요";
-      });
-    }
-
-    // 팝업 바깥 클릭 시 닫기
-    popup.addEventListener("click", function (e) {
-      if (e.target === popup) {
-        popup.classList.remove("show");
-      }
-    });
-  });
+      
     </script>
     
     <script src="./js/common.js"></script>

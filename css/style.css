@@ -127,6 +127,12 @@ body {
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
+.star1 img:hover {
+  filter: brightness(3);
+  transition: all 0.5s ease;
+  transform: scale(1.2);
+}
+
 @keyframes twinkle {
   0% {
     filter: brightness(1.2);
@@ -145,6 +151,12 @@ body {
   top: 30%;
   left: 43%;
   animation: rotate 5s linear infinite;
+  transition: all 0.5s ease;
+}
+
+.star2 img:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.2);
 }
 
 @keyframes rotate {
@@ -334,11 +346,21 @@ body {
 .description .text1 {
   font-size: 24px;
   color: #fff;
+  transition: font-size 0.3s ease;
+}
+
+.description .text1:hover {
+  font-size: 30px;
 }
 
 .description .text2 {
   position: absolute;
   top: 50px;
+  transition: all 0.5s ease;
+}
+
+.description .text2:hover {
+  scale: 1.2;
 }
 
 /* 트랙 */

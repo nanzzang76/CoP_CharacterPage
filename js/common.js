@@ -100,3 +100,19 @@ document.addEventListener("DOMContentLoaded", function () {
     answer.textContent = "구린하루되세요";
   });
 });
+
+// 탑버튼
+document.addEventListener("DOMContentLoaded", function () {
+  const topBtn = document.getElementById("topBtn");
+
+  window.addEventListener("scroll", function () {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  topBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});

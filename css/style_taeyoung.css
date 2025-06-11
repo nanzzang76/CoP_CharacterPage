@@ -80,7 +80,7 @@ body {
   position: relative;
   width: auto;
   height: 100vh;
-  background-color: #60a241;
+  background-color: #aa9157;
   background-image: radial-gradient(#98bf85 1px, transparent 1px);
   background-size: 20px 20px;
   z-index: 0;
@@ -103,8 +103,9 @@ body {
 .character1 {
   z-index: 5;
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: -10%;
+  left: -10%;
+  scale: 0.8;
 }
 
 .character1 img {
@@ -370,7 +371,7 @@ body {
   left: -50vw;
   height: 280px;
   position: relative;
-  background-color: #1120f7;
+  background-color: #2effae;
   color: #5af711;
   font-weight: bold;
   font-size: 100px;
@@ -520,25 +521,25 @@ body {
 .rocklee2 {
   position: absolute;
   z-index: 100;
-  top: -25%;
-  right: 10%;
-  scale: 1.2;
+  top: -75%;
+  right: -2%;
+  scale: 0.6;
 }
 
 .rocklee_shadow1 {
   position: absolute;
   z-index: 99;
-  top: -25%;
-  right: 8%;
-  scale: 1.2;
+  top: -75%;
+  right: -4%;
+  scale: 0.6;
 }
 
 .rocklee_shadow2 {
   position: absolute;
   z-index: 98;
-  top: -25%;
-  right: 6%;
-  scale: 1.2;
+  top: -75%;
+  right: -6%;
+  scale: 0.6;
 }
 
 @keyframes shoot {
@@ -826,7 +827,7 @@ body {
   bottom: 9%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #1120f7;
+  background-color: #2effae;
   font-size: large;
   font-weight: bold;
   width: 200px;
@@ -839,7 +840,7 @@ body {
   position: absolute;
   width: 20%;
   bottom: 15%;
-  right: 25%;
+  right: 20%;
   z-index: 11;
 }
 .fighting-wrap {

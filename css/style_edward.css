@@ -35,7 +35,7 @@ body {
 
 .menu_img img:hover {
   transition: all 0.3s ease;
-  border: #ffc22f 5px solid;
+  border: #ff0101 5px solid;
   border-radius: 50%;
 }
 
@@ -80,8 +80,8 @@ body {
   position: relative;
   width: auto;
   height: 100vh;
-  background-color: #aa9157;
-  background-image: radial-gradient(#98bf85 1px, transparent 1px);
+  background-color: #aa3939;
+  background-image: radial-gradient(#ff0101 1px, transparent 1px);
   background-size: 20px 20px;
   z-index: 0;
 }
@@ -103,7 +103,7 @@ body {
 .character1 {
   z-index: 5;
   position: absolute;
-  top: -10%;
+  top: -7%;
   left: -10%;
   scale: 0.8;
 }
@@ -341,7 +341,7 @@ body {
 .description {
   position: absolute;
   top: 550px;
-  left: 500px;
+  left: 640px;
 }
 
 .description .text1 {
@@ -371,8 +371,8 @@ body {
   left: -50vw;
   height: 280px;
   position: relative;
-  background-color: #2effae;
-  color: #ffc22f;
+  background-color: #fffc00;
+  color: #ff0101;
   font-weight: bold;
   font-size: 100px;
   display: flex;
@@ -387,7 +387,7 @@ body {
 .track .track1 {
   white-space: nowrap;
   font-weight: bold;
-  color: #ffc22f;
+  color: #ff0101;
   animation-timing-function: linear;
   animation: moveRight 15s linear infinite;
   display: inline-block;
@@ -396,7 +396,7 @@ body {
 .track .track2 {
   white-space: nowrap;
   font-weight: bold;
-  color: #ffc22f;
+  color: #ff0101;
   animation-timing-function: linear;
   animation: moveLeft 15s linear infinite;
 }
@@ -423,7 +423,7 @@ body {
   position: absolute;
   width: 200vw;
   height: 600px;
-  background-color: #cf2eff;
+  background-color: #009dff;
   z-index: 0;
   top: 90%;
   transform: rotate(-10deg);
@@ -435,7 +435,7 @@ body {
   display: flex;
   width: auto;
   height: 70vh;
-  background-color: #cf2eff;
+  background-color: #009dff;
   z-index: 1;
 }
 
@@ -521,25 +521,22 @@ body {
 .rocklee2 {
   position: absolute;
   z-index: 100;
-  top: -75%;
+  top: -20%;
   right: -2%;
-  scale: 0.6;
 }
 
 .rocklee_shadow1 {
   position: absolute;
   z-index: 99;
-  top: -75%;
+  top: -20%;
   right: -4%;
-  scale: 0.6;
 }
 
 .rocklee_shadow2 {
   position: absolute;
   z-index: 98;
-  top: -75%;
+  top: -20%;
   right: -6%;
-  scale: 0.6;
 }
 
 @keyframes shoot {
@@ -561,7 +558,7 @@ body {
 
 .rocklee_text {
   position: absolute;
-  top: 45%;
+  top: 25%;
   left: 40%;
   transform: translate(-50%, -50%);
   z-index: 90;
@@ -570,7 +567,7 @@ body {
 }
 
 .symbol {
-  background-color: #ffc22f;
+  background-color: #ff0101;
   padding: 10px 20px;
   position: absolute;
   z-index: 50;
@@ -585,6 +582,7 @@ body {
 .symbol img {
   transition: all 0.5s ease;
   animation: blink 1s linear infinite;
+  height: 70px;
 }
 
 .symbol img:nth-child(1) {
@@ -827,7 +825,7 @@ body {
   bottom: 9%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #2effae;
+  background-color: #fffc00;
   font-size: large;
   font-weight: bold;
   width: 200px;

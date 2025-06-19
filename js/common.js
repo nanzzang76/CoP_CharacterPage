@@ -112,3 +112,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function doGet() {
+  const sheet =
+    SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Comments");
+  const data = sheet.getDataRange().getValues();
+  const comments = data.slice(1).map((row) => ({
+    time: row[0],
+    nickname: row[1],
+    content: row[2],
+  }));
+  return ContentService.createTextOutput(JSON.stringify(comments)).setMimeType(
+    ContentService.MimeType.JSON
+  );
+}
+
+function doPost(e) {
+  const sheet =
+    SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Comments");
+  const data = JSON.parse(e.postData.contents);
+  const now = new Date();
+  sheet.appendRow([now, data.nickname, data.content]);
+  return ContentService.createTextOutput("Success");
+}

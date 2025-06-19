@@ -254,34 +254,65 @@
       <input type="text" id="new-comment" placeholder="댓글 입력" />
       <button onclick="submitComment()">등록</button>
 
-      <script>
-        const apiUrl =
-          "https://script.google.com/macros/s/AKfycbxyBCBnwLi2UyhTC9R-f1HPKLG7holA1dXStZFgOV9JP9R4mAKKzkIojSzPkp2SHhd9/exec";
+      <!-- Firebase SDK 불러오기 -->
+      <script type="module">
+        // ✅ 1. Firebase SDK 임포트
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        import {
+          getFirestore,
+          collection,
+          addDoc,
+          getDocs,
+          serverTimestamp,
+          query,
+          orderBy,
+        } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
-        // 댓글 가져오기
+        // ✅ 2. Firebase 설정값 (혜민 config 붙임)
+        const firebaseConfig = {
+          apiKey: "AIzaSyAkWZK2xR08tX86yAe_uD-ThAFhZoCrGyc",
+          authDomain: "character-comments.firebaseapp.com",
+          projectId: "character-comments",
+          storageBucket: "character-comments.firebasestorage.app",
+          messagingSenderId: "774340467705",
+          appId: "1:774340467705:web:1e32673cbf86212868fb28",
+          measurementId: "G-W3SY3JL2KM",
+        };
+
+        // ✅ 3. Firebase 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // ✅ 4. 댓글 불러오기
         async function fetchComments() {
-          const res = await fetch(apiUrl);
-          const data = await res.json();
+          const q = query(
+            collection(db, "comments"),
+            orderBy("timestamp", "desc")
+          );
+          const querySnapshot = await getDocs(q);
           const list = document.getElementById("comment-list");
           list.innerHTML = "";
-          data.forEach((comment) => {
+          querySnapshot.forEach((doc) => {
+            const data = doc.data();
             const li = document.createElement("li");
-            li.textContent = `[${comment.time}] ${comment.nickname}: ${comment.content}`;
+            li.textContent = `[${new Date(
+              data.timestamp?.toDate()
+            ).toLocaleString()}] ${data.nickname}: ${data.content}`;
             list.appendChild(li);
           });
         }
 
-        // 댓글 등록하기
+        // ✅ 5. 댓글 등록
         async function submitComment() {
           const nickname = document.getElementById("nickname").value.trim();
           const content = document.getElementById("new-comment").value.trim();
           if (!nickname || !content)
             return alert("닉네임과 댓글을 모두 입력해 주세요!");
 
-          await fetch(apiUrl, {
-            method: "POST",
-            body: JSON.stringify({ nickname, content }),
-            headers: { "Content-Type": "application/json" },
+          await addDoc(collection(db, "comments"), {
+            nickname,
+            content,
+            timestamp: serverTimestamp(),
           });
 
           document.getElementById("nickname").value = "";
@@ -289,7 +320,8 @@
           fetchComments();
         }
 
-        fetchComments(); // 페이지 열리면 댓글 불러오기
+        window.submitComment = submitComment;
+        window.addEventListener("DOMContentLoaded", fetchComments);
       </script>
     </section>
 

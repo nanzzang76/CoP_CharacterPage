@@ -971,6 +971,6 @@ input[type="text"] {
   transition: background 0.3s;
 }
 
-button:hover {
+.page4 button:hover {
   background: #45a049;
 }
